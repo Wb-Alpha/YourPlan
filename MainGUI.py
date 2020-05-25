@@ -1,5 +1,6 @@
 import tkinter as tk
 import sqlite3
+import tkinter.messagebox
 
 HEIGHT = 300
 WIDTH = 400
@@ -46,11 +47,10 @@ def addListComfire(text, top):
         tk.messagebox.showinfo('提示', '存在重复的计划单，请更换名字')
     else:
         listBox.insert("end", text)
-        #c.execute("create table "+text+"/n"
-         #        "(contain varchar(50) primary key);"
-          #        )
-        c.execute("insert into list(contain) values (?);", (text,))
-        database.commit()
+        #c.execute('''create table if is not exist ?
+        #         (contain varchar(50) primary key);''', (text,))
+        #c.execute("insert into list(contain) values (?);", (text,))
+        #database.commit()
         top.destroy()
 
 
@@ -59,6 +59,8 @@ def exitAndSave():
     print("Escape")
     root.destroy()
 
+def save():
+    
 
 def click():
     print("click")
