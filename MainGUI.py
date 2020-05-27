@@ -2,6 +2,7 @@ import tkinter as tk
 import sqlite3
 import tkinter.messagebox
 
+
 HEIGHT = 300
 WIDTH = 400
 
@@ -59,7 +60,7 @@ def exitAndSave():
     print("Escape")
     root.destroy()
 
-def save():
+
     
 
 def click():
